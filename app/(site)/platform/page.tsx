@@ -120,11 +120,12 @@ export default function PlatformPage() {
             <div className="relative">
               <div className="absolute -inset-2 rounded-[2rem] bg-gold-300/10 blur-2xl" />
               <Image
-                src="https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&w=1200&q=80"
+                src="https://drive.google.com/uc?export=view&id=1qmqwEpKUZPsgy5boeIdizxoB2IxqGi8N"
                 alt="Pastoralist community with livestock in Ethiopia"
                 width={1200}
                 height={800}
                 className="relative rounded-3xl object-cover shadow-lift"
+                loading="eager"
               />
             </div>
           </div>
@@ -250,11 +251,12 @@ export default function PlatformPage() {
 
               <div className="relative overflow-hidden rounded-3xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1574482620911-9dc5d26ccec0?auto=format&fit=crop&w=900&q=80"
+                  src="https://drive.google.com/uc?export=view&id=1rhL8MXkY2BpX706AnahAPOdk-MKUrQe7"
                   alt="Veterinarian examining livestock in Ethiopia"
                   width={900}
                   height={400}
                   className="w-full object-cover h-48"
+                  loading="eager"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-moss-700/60 to-transparent flex items-center px-6">
                   <p className="font-display text-lg font-semibold text-cream-50 max-w-xs">

@@ -301,7 +301,7 @@ export default function TechnologyPage() {
             <div className="relative">
               <div className="absolute -inset-2 rounded-[2rem] bg-gradient-to-br from-gold-200/30 to-moss-200/30 blur-2xl" />
               <Image
-                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80"
+                src="https://drive.google.com/uc?export=view&id=1-OUtLDoiRxXW4TSwvKGxlXP08Mxqq1uK"
                 alt="Technology development"
                 width={1200}
                 height={900}

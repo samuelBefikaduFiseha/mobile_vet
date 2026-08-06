@@ -300,57 +300,6 @@ export default async function BlogPage() {
               </div>
             </div>
           </section>
-
-          {/* ── PREVIEW POSTS ── */}
-          <section className="bg-cream-50 py-16 sm:py-20">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <SectionHeader
-                eyebrow="Upcoming Posts"
-                title="What we're writing"
-                description="These are the first posts we are working on. Subscribe below to be notified when they publish."
-              />
-              <div className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-                {PREVIEW_POSTS.map((post) => (
-                  <div
-                    key={post.title}
-                    className="flex flex-col overflow-hidden rounded-3xl border border-cream-200 bg-white shadow-soft"
-                  >
-                    <div className="relative aspect-[16/9] overflow-hidden">
-                      <Image
-                        src={post.image}
-                        alt={post.title}
-                        fill
-                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                        className="object-cover opacity-80"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-white/60 to-transparent" />
-                      <span className="absolute left-4 top-4 rounded-full bg-cream-50/90 px-3 py-1 text-xs font-semibold text-ink-400">
-                        Coming soon
-                      </span>
-                    </div>
-                    <div className="flex flex-1 flex-col p-6">
-                      <div className="flex items-center gap-3 text-xs">
-                        <span
-                          className={`rounded-full px-2.5 py-0.5 font-semibold ${CATEGORY_COLORS[post.category] ?? "bg-moss-100 text-moss-600"}`}
-                        >
-                          {post.category}
-                        </span>
-                        <span className="flex items-center gap-1 text-ink-400">
-                          <Clock className="h-3 w-3" /> {post.readTime} read
-                        </span>
-                      </div>
-                      <h3 className="mt-3 flex-1 font-display text-lg font-semibold text-moss-600 text-balance">
-                        {post.title}
-                      </h3>
-                      <p className="mt-2 text-sm leading-relaxed text-ink-400 line-clamp-3">
-                        {post.excerpt}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
         </>
       )}
 

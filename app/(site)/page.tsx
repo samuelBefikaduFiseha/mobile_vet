@@ -134,7 +134,7 @@ const REGIONS = [
       "Recently affected by severe drought causing massive livestock losses. High urgency for early warning systems and restocking support.",
     tags: ["High Priority", "Pastoralist"],
     image:
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80",
+      "https://drive.google.com/uc?export=view&id=1BCwoCfqWhYiy0Ca-MjlQu6hhKYnw49um",
   },
   {
     name: "Afar Region",
@@ -142,7 +142,7 @@ const REGIONS = [
       "Arid and semi-arid lands with significant livestock populations. Strong need for drought prediction and veterinary traceability.",
     tags: ["Arid Climate", "Scale Potential"],
     image:
-      "https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&w=900&q=80",
+      "https://drive.google.com/uc?export=view&id=1_DIQq9FXnlerc_g3Jk65_cSMdZBbayIO",
   },
   {
     name: "Somali Region",
@@ -150,7 +150,7 @@ const REGIONS = [
       "Large pastoralist communities with limited financial inclusion. Ideal for testing insurance and credit linkage models.",
     tags: ["Financial Inclusion", "Mobile First"],
     image:
-      "https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=900&q=80",
+      "https://drive.google.com/uc?export=view&id=1-LmPqbAargAAdr2zApSpdiKPc2ATI8ZE",
   },
 ];
 
@@ -264,7 +264,7 @@ export default function HomePage() {
             <div className="relative">
               <div className="absolute -inset-2 rounded-[2rem] bg-gradient-to-br from-moss-300/40 via-gold-200/40 to-earth-200/40 blur-2xl" />
               <Image
-                src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=1200&q=80"
+                src="https://drive.google.com/uc?export=view&id=1eo-dQ7iTr0wsxCiVmEZ4Bhs1e_TLpRgs"
                 alt="Ethiopian pastoralists with their cattle"
                 width={1200}
                 height={900}

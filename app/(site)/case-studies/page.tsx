@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ArrowRight, MapPin, Quote, Telescope } from "lucide-react";
+import { ArrowRight, MapPin, Quote, Telescope, PenLine } from "lucide-react";
 import Link from "next/link";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { LinkButton } from "@/components/site/Button";
+import { NewsletterForm } from "@/components/site/NewsletterForm";
 import { createSupabaseServerClient, isSupabaseConfigured } from "@/lib/supabase/server";
 
 export const metadata: Metadata = {
@@ -27,59 +28,7 @@ type CaseStudy = {
   metrics: Metric[];
 };
 
-const STATIC_PILOTS = [
-  {
-    region: "Borena Zone, Oromia",
-    title: "Drought Early Warning & Herd Protection",
-    focus: "Early Warning",
-    tags: ["High Priority", "Drought Response", "Pastoralist"],
-    image: "https://images.unsplash.com/photo-1559620192-032c4bc4674e?auto=format&fit=crop&w=1200&q=80",
-    context:
-      "Borena Zone experienced one of its worst droughts in recent memory, causing devastating livestock losses and displacement of pastoralist communities. The zone is our highest-priority pilot site because the urgency is highest and the need for early warning is most acute.",
-    pilotGoal:
-      "Deploy RFID-GPS ear tags and SMS/USSD early warning alerts to a community of 50–100 enrolled farmers. Validate that satellite-derived drought risk signals can reach farmers via basic mobile phones with enough lead time to act.",
-    expectedOutcomes: [
-      "Early warning lead time of 14+ days before visible pasture stress",
-      "Farmer alert response rate of 70%+",
-      "Reduction in drought-related mortality in enrolled households",
-      "Baseline digital herd records for 1,000+ animals",
-    ],
-  },
-  {
-    region: "Afar Region",
-    title: "Digital Livestock Identity & Veterinary Traceability",
-    focus: "Digital Identity",
-    tags: ["Traceability", "Vet Records", "Market Access"],
-    image: "https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1200&q=80",
-    context:
-      "Afar Region hosts large livestock market networks but lacks any digital identity system for animals. Theft, disease transmission across market boundaries, and the absence of ownership verification are all problems that digital traceability can directly address.",
-    pilotGoal:
-      "Pilot RFID ear tag deployment at two livestock market entry points in Afar Region, in partnership with the regional veterinary service. Create verifiable digital profiles for animals at the point of sale.",
-    expectedOutcomes: [
-      "100% of tagged animals with complete ownership records",
-      "Veterinary records accessible at point of care via RFID scan",
-      "Disease outbreak tracing time reduced from days to hours",
-      "Foundation for livestock collateral documentation for banks",
-    ],
-  },
-  {
-    region: "Somali Region",
-    title: "Financial Inclusion via Livestock Insurance",
-    focus: "Financial Inclusion",
-    tags: ["Insurance", "Credit", "Mobile First"],
-    image: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=1200&q=80",
-    context:
-      "The Somali Region has large pastoralist populations with near-zero insurance penetration. Mobile phone usage is high, making it ideal for testing USSD-based insurance products. Verified digital livestock records are the missing link that insurers need to offer products at scale.",
-    pilotGoal:
-      "Partner with an insurance provider to co-design an index-based livestock insurance product calibrated to our environmental risk signals. Test USSD-based premium collection and automated claim triggering.",
-    expectedOutcomes: [
-      "First index-based livestock insurance product in the region",
-      "USSD-based premium collection and claim notification",
-      "Claim processing time under 72 hours from trigger event",
-      "Trust baseline established for future credit products",
-    ],
-  },
-];
+const STATIC_PILOTS = [];
 
 function parseMetrics(raw: unknown): Metric[] {
   if (Array.isArray(raw)) return raw as Metric[];
@@ -236,77 +185,24 @@ export default async function CaseStudiesPage() {
           </div>
         </section>
       ) : (
-        /* ── STATIC PLANNED PILOTS ── */
-        <section className="bg-cream-50 py-20 sm:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-20">
-            {STATIC_PILOTS.map((pilot, i) => (
-              <article
-                key={pilot.region}
-                className="grid gap-12 lg:grid-cols-2 lg:items-start"
-              >
-                <div className={`relative ${i % 2 === 1 ? "lg:order-2" : ""}`}>
-                  <div className="absolute -inset-2 rounded-[2rem] bg-gradient-to-br from-moss-300/25 via-gold-200/25 to-earth-200/25 blur-2xl" />
-                  <Image
-                    src={pilot.image}
-                    alt={pilot.region}
-                    width={1200}
-                    height={800}
-                    className="relative aspect-[4/3] rounded-3xl object-cover shadow-lift"
-                  />
-                  <div className="absolute left-4 top-4 flex items-center gap-1.5 rounded-full bg-cream-50/95 px-3 py-1.5 text-xs font-semibold text-moss-600 shadow-soft">
-                    <MapPin className="h-3 w-3" /> {pilot.region}
-                  </div>
-                </div>
-
-                <div className={i % 2 === 1 ? "lg:order-1" : ""}>
-                  <div className="flex flex-wrap gap-2">
-                    {pilot.tags.map((t) => (
-                      <span
-                        key={t}
-                        className="rounded-full bg-moss-100 px-3 py-1 text-xs font-semibold text-moss-600"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                  <h2 className="mt-4 font-display text-2xl font-bold text-moss-600 text-balance sm:text-3xl">
-                    {pilot.title}
-                  </h2>
-                  <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-gold-300">
-                    Planned Pilot · {pilot.focus}
+        <>
+          {/* ── COMING SOON BANNER ── */}
+          <section className="bg-moss-500 py-5">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="flex flex-wrap items-center justify-between gap-4">
+                <div className="flex items-center gap-3 text-cream-50">
+                  <PenLine className="h-5 w-5 shrink-0 text-gold-200" />
+                  <p className="text-sm font-semibold">
+                    Posts are coming soon — subscribe to get them first.
                   </p>
-                  <div className="mt-5 space-y-4">
-                    <div>
-                      <h4 className="font-display text-sm font-semibold uppercase tracking-wider text-gold-300">
-                        Context
-                      </h4>
-                      <p className="mt-1 text-sm leading-relaxed text-ink-400">{pilot.context}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-display text-sm font-semibold uppercase tracking-wider text-gold-300">
-                        Pilot Goal
-                      </h4>
-                      <p className="mt-1 text-sm leading-relaxed text-ink-400">{pilot.pilotGoal}</p>
-                    </div>
-                  </div>
-                  <div className="mt-6">
-                    <h4 className="font-display text-sm font-semibold uppercase tracking-wider text-moss-400">
-                      Expected Outcomes
-                    </h4>
-                    <ul className="mt-3 space-y-2">
-                      {pilot.expectedOutcomes.map((o) => (
-                        <li key={o} className="flex items-start gap-2 text-sm text-ink-500">
-                          <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-moss-400" />
-                          {o}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
                 </div>
-              </article>
-            ))}
-          </div>
-        </section>
+                <div className="w-full sm:w-auto">
+                  <NewsletterForm compact />
+                </div>
+              </div>
+            </div>
+          </section>
+        </>
       )}
 
       {/* ── CTA ── */}
