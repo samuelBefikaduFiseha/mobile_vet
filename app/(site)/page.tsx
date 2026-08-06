@@ -166,6 +166,7 @@ export default function HomePage() {
           priority
           sizes="100vw"
           className="-z-20 object-cover"
+          loading="eager"
         />
         <div
           className="absolute inset-0 -z-10 bg-gradient-to-br from-moss-700/85 via-moss-500/80 to-earth-300/70"
@@ -269,6 +270,7 @@ export default function HomePage() {
                 width={1200}
                 height={900}
                 className="relative rounded-3xl object-cover shadow-lift"
+                loading="eager"
               />
             </div>
             <div>
@@ -409,6 +411,7 @@ export default function HomePage() {
                     fill
                     sizes="(min-width: 1024px) 33vw, 100vw"
                     className="object-cover transition duration-500 group-hover:scale-105"
+                    loading="eager"
                   />
                   <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-cream-50/95 px-3 py-1 text-xs font-semibold text-moss-600">
                     <MapPin className="h-3 w-3" /> {r.name}

@@ -306,6 +306,7 @@ export default function TechnologyPage() {
                 width={1200}
                 height={900}
                 className="relative rounded-3xl object-cover shadow-lift"
+                loading="eager"
               />
             </div>
           </div>
